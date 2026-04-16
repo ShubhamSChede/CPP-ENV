@@ -1,5 +1,5 @@
-//main.cpp
 #include <iostream>
+#include <string>   // Required for string
 using namespace std;
 
 class Student {
@@ -8,14 +8,11 @@ protected:
     string name;
 
 public:
-    // Constructor
-    Student(int id, string n) {
-        studentID = id;
-        name = n;
-    }
+    // Constructor (using initializer list - better style)
+    Student(int id, const string& n) : studentID(id), name(n) {}
 
     // Virtual function
-    virtual void displayInfo() {
+    virtual void displayInfo() const {
         cout << "Student ID: " << studentID << endl;
         cout << "Name: " << name << endl;
     }
